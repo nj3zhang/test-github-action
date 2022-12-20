@@ -1,0 +1,20 @@
+# Create a PR from develop -> master
+name: Deployment PR
+
+on:
+  push:
+    branches:
+      - mango
+jobs:
+  create_PR:
+    runs-on: ubuntu-latest
+    name: Create PR
+    steps:
+    - name: Integration check
+      uses: peter-evans/create-pull-request@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        base: main
+        branch: mango
+        title: Deploy to prod
+        reviewers: nj3zhang
