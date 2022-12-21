@@ -4,7 +4,7 @@ name: Deployment PR
 on:
   push:
     branches:
-      - mango
+      - develop
 
 jobs:
   deploy:
@@ -18,7 +18,7 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           base: main
-          branch: mango
+          branch: develop
           title: Deploy to prod
           commit-message: Update report
           committer: GitHub <noreply@github.com>
