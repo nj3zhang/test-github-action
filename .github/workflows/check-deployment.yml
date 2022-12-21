@@ -5,16 +5,22 @@ on:
   push:
     branches:
       - mango
+
 jobs:
-  create_PR:
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
-    name: Create PR
+
     steps:
-    - name: Integration check
-      uses: peter-evans/create-pull-request@v4
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        base: main
-        branch: mango
-        title: Deploy to prod
-        reviewers: nj3zhang
+      - uses: actions/checkout@v3
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.PAT }}
+          base: main
+          branch: mango
+          title: Deploy to prod
+          commit-message: Update report
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
