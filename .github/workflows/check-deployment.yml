@@ -3,8 +3,7 @@ name: Deployment PR
 
 on:
   push:
-    branches:
-      - develop
+    branches: [develop]
 
 jobs:
   deploy:
@@ -23,4 +22,3 @@ jobs:
           commit-message: Update report
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-          signoff: false
