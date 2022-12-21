@@ -16,8 +16,6 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.PAT }}
-          base: main
-          branch: develop
           title: Deploy to prod
           commit-message: Update report
           committer: GitHub <noreply@github.com>
