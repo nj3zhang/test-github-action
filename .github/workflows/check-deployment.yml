@@ -1,5 +1,5 @@
 # Create a PR from develop -> master
-name: Deployment PR
+name: Create deployment PR
 
 on:
   push:
@@ -21,4 +21,5 @@ jobs:
           title: Deploy to prod
           source_branch: develop
           target_branch: main
-          body: Update report
+
+# on PR approval -> add label
