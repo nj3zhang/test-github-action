@@ -6,23 +6,21 @@ on:
   pull_request:
     types:
       - labeled
-      - ready_for_review
-      - review_requested
       - synchronize
+      - ready_for_review
   pull_request_review:
     types:
       - dismissed
       - submitted
-
 jobs:
   merge:
     runs-on: ubuntu-latest
     name: Merge
     steps:
-    - name: Integration check
+    - name: Merge PR
       uses: squalrus/merge-bot@v0.1.0
       with:
-        test: true # turn this to false if we want it to actually merge the PR when all conditions are met
+        test: true
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         reviewers: true
         labels: deploy
