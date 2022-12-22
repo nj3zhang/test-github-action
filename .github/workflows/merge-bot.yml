@@ -6,6 +6,7 @@ on:
   pull_request:
     types:
       - labeled
+      - synchronous
 jobs:
   merge:
     runs-on: ubuntu-latest
