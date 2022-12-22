@@ -1,5 +1,5 @@
 # Create a PR from develop -> master
-name: Deployment PR
+name: Create deployment PR
 
 on:
   push:
