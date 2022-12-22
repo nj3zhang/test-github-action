@@ -17,9 +17,7 @@ jobs:
       - name: Create pull request
         uses: devops-infra/action-pull-request@v0.5.3
         with:
-          github_token: ${{ secrets.PAT }}
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Must have read/write permission to the repo
           title: Deploy to prod
           source_branch: develop
           target_branch: main
-
-# on PR approval -> add label
