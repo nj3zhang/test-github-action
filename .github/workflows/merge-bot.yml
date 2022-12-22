@@ -22,7 +22,7 @@ jobs:
     - name: Integration check
       uses: squalrus/merge-bot@v0.1.0
       with:
-        test: true
+        test: true # turn this to false if we want it to actually merge the PR when all conditions are met
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         reviewers: true
         labels: deploy
