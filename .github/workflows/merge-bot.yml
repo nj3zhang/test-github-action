@@ -7,10 +7,8 @@ on:
     types:
       - labeled
       - ready_for_review
-      - review_request_removed
       - review_requested
       - synchronize
-      - unlabeled
   pull_request_review:
     types:
       - dismissed
@@ -22,10 +20,10 @@ jobs:
     name: Merge
     steps:
     - name: Integration check
-      uses: squalrus/merge-bot@v0.1.0
+      uses: squalrus/merge-bot@v0.4.5
       with:
-        GITHUB_TOKEN: ${{ secrets.PAT }}
         test: true
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         reviewers: true
         labels: deploy
         blocking_labels: do not merge
